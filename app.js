@@ -55,12 +55,16 @@ app.post('/submit', async (req, res) => {
   });
 
 
-  
+  // Use PORT provided in environment or default to 3000
+const port = process.env.PORT || 7000;
+
+// Listen on `port` and 0.0.0.0
+app.listen(port, "0.0.0.0", function () {
+    console.log(`Server is listening at port no. ${port}`);
+});
 
 
-app.listen('7000', () => {
-    console.log("Server is listening at port no. 7000");
-})
+
 
 
 
