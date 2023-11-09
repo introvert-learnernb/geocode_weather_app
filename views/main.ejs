@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- linking with font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- linking with external css -->
+    <link rel="stylesheet" href="/css/style-main.css" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- linking with boxicons... -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="wave one"></div>
+            <div class="wave two"></div>
+            <div class="wave three"></div>
+
+            <div id="weathericon">
+                <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+
+            <div class="info">
+                <div class="upper-info">
+                    <h3 class="location"><i class="fa-solid fa-street-view"></i><%=new_location[0]%>,<%=new_location[1]%>,<%=new_location[2]%></h3>
+                    <p id="date">FRI | NOV-3 | 9:55AM</p>
+                </div>
+                <div class="lower-info">
+                    <h1 class="temp"><%=result.main.temp%>°C</h1>
+                    <p id="temp_min_max">Min <%=result.main.temp_min-1%>°C | Max <%=result.main.temp_max+1%>°C</p>
+                </div>
+            </div>
+        </div>
+        <div class="back_button">
+            <a href="/">
+               <p>Back</p> <i class='bx bx-chevrons-right'></i>
+            </a>
+        </div>
+    </div>
+    <script src="/js/index.js" type="module"> </script>
+</body>
+
+</html>

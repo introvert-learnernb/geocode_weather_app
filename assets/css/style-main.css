@@ -1,0 +1,156 @@
+:root {
+    --grey-color: #555555;
+    --sky-blue-color: #73e6ff;
+    --yellow-color: #FFCC00;
+    --milky-white-color: #e4e6ea;
+    --black-color: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+
+.container {
+    background-color: var(--black-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--black-color);
+    /* border: 20px solid black; */
+   
+}
+
+.box {
+    /* border:2px solid red; */
+    border-radius: 0.5em;
+    width: 17em;
+    height: auto;
+    padding: 0.5em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--sky-blue-color);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgb(255, 255, 255,0.7);
+    /* Apply a shadow with the desired properties */
+
+}
+
+#weathericon {
+    padding: 3.5em;
+    display: block;
+    margin-bottom: 2em;
+}
+
+#weathericon i {
+    color: var(--yellow-color);
+    font-size: 3.2em;
+    animation: scaleAnimation 4s ease-in-out infinite;
+    /* Apply the size-changing animation */
+}
+
+.back_button{
+    position:absolute;
+    bottom:2em;
+    right:2em;
+}
+
+.back_button a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border:none;
+    outline: none;
+    background:none;
+    color:white;
+    cursor: pointer;
+}
+
+.back_button a .bx-chevrons-right{
+    padding-top: 3px;
+    
+    color:white;
+    /* border:2px solid red; */
+}
+
+
+@keyframes scaleAnimation {
+
+    0%,
+    100% {
+        transform: scale(0.8);
+        /* Initial and final size is 100% (no change) */
+    }
+
+    50% {
+        transform: scale(1.4);
+        /* Increase the size to 150% at 50% of the animation */
+    }
+}
+
+.box .info {
+    text-align: center;
+    margin-bottom: 0.8em;
+    z-index: 2;
+}
+
+.box .info .location {
+    font-size: 2.3em;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.box .info .upper-info {
+    margin-bottom: 1.2em;
+    font-size:0.7em;
+}
+
+.box .info .upper-info #date,
+.box .info .lower-info #temp_min_max {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--grey-color);
+}
+
+/*--------------- WAVES ----------------*/
+.box .wave {
+    opacity: 0.5;
+    position: absolute;
+    border-radius: 35%;
+    width: 33em;
+    height: 33em;
+    background-color: whitesmoke;
+    animation: rotate 10s linear infinite;
+    /* Apply the rotation animation */
+    transform-origin: center;
+    /* Set the transform origin to the center */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+        /* Start the rotation from 0 degrees */
+    }
+
+    to {
+        transform: rotate(360deg);
+        /* Rotate the div 360 degrees */
+    }
+}
+
+.box .wave.one {
+    top: 15em;
+}
+
+.box .wave.two {
+    top: 16em;
+}
+
+.box .wave.three {
+    top: 17em;
+}
