@@ -35,7 +35,7 @@ app.post('/submit', async (req, res) => {
     if (!location) {
         alert(`You have to provide the location....`);
     } else {
-        geocode(location, ({longitude,latitude,location}, error) => {
+        geocode(location, ({longitude,latitude,location}={}, error) => {
             if (error) {
                 return console.log(error);
             }
